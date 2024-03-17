@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <persons>
+        <person>
+            <id>1</id>
+            <first_name>Anna</first_name>
+            <last_name>Jagiello</last_name>
+            <mobile>622656712</mobile>
+            <email>paczuskiszymon16@gmail.com</email>
+            <pesel>45770254274</pesel>
+        </person>
+        <person>
+            <id>2</id>
+            <first_name>Krzysztof</first_name>
+            <last_name>Jagiello</last_name>
+            <mobile>334718252</mobile>
+            <email>kowalski.jan@gmail.com</email>
+            <pesel>32245776037</pesel>
+        </person>
+        <person>
+            <id>3</id>
+            <first_name>Tomasz</first_name>
+            <last_name>Nowak</last_name>
+            <mobile>465640473</mobile>
+            <email>mateusz_nowak5@gmail.com</email>
+            <pesel>64128414164</pesel>
+        </person>
+        <person>
+            <id>4</id>
+            <first_name>Jan</first_name>
+            <last_name>Lato</last_name>
+            <mobile>820017118</mobile>
+            <email>bylek@op.pl</email>
+            <pesel>81340543113</pesel>
+        </person>
+    </persons>
+</persons>
