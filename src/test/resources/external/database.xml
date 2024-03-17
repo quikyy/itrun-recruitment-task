@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <persons>
+        <person>
+            <id>1</id>
+            <first_name>Szymon</first_name>
+            <last_name>Smuda</last_name>
+            <mobile>512596378</mobile>
+            <email>paczuskiszymon16@gmail.com</email>
+            <pesel>11111111111</pesel>
+        </person>
+    </persons>
+</persons>
