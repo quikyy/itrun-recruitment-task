@@ -5,6 +5,8 @@ import person.Person;
 import jakarta.xml.bind.JAXBException;
 import person.Type;
 import person.PersonRepositoryWrapper;
+import random.RandomGenerator;
+
 import javax.xml.stream.XMLStreamException;
 
 public class Main {
@@ -14,14 +16,14 @@ public class Main {
 
         boolean mockSomeData = true;
         if (mockSomeData) {
-            personRepository.create(Type.EXTERNAL, new Person("Szymon", "Smuda", "512596378", "paczuskiszymon16@gmail.com", "11111111111"));
-            personRepository.create(Type.EXTERNAL, new Person("Jan", "Kowalski", "501531649", "kowalski.jan@gmail.com", "11111111111"));
-            personRepository.create(Type.EXTERNAL, new Person("Mateusz", "Nowak", "603993123", "mateusz_nowak5@gmail.com", "11111111111"));
-            personRepository.create(Type.EXTERNAL, new Person("Janusz", "Bylak", "6559513123", "bylek@op.pl", "11111111111"));
+            personRepository.create(Type.EXTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "paczuskiszymon16@gmail.com", RandomGenerator.getRandomNumber(11)));
+            personRepository.create(Type.EXTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "kowalski.jan@gmail.com", RandomGenerator.getRandomNumber(11)));
+            personRepository.create(Type.EXTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "mateusz_nowak5@gmail.com", RandomGenerator.getRandomNumber(11)));
+            personRepository.create(Type.EXTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "bylek@op.pl", RandomGenerator.getRandomNumber(11)));
 
-            personRepository.create(Type.INTERNAL, new Person("Anna", "Przyblska", "571556512", "loremipsum@gmail.com", "11111111111"));
-            personRepository.create(Type.INTERNAL, new Person("Grzegorz", "Testowy", "614167358", "develop@gmail.com", "11111111111"));
-            personRepository.create(Type.INTERNAL, new Person("Jakub", "Produkcyjny", "590194371", "prod@gmail.com", "11111111111"));
+            personRepository.create(Type.INTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "loremipsum@gmail.com", RandomGenerator.getRandomNumber(11)));
+            personRepository.create(Type.INTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "develop@gmail.com", RandomGenerator.getRandomNumber(11)));
+            personRepository.create(Type.INTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "prod@gmail.com", RandomGenerator.getRandomNumber(11)));
         }
 
     }

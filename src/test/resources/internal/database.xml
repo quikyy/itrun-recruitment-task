@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <persons>
+        <person>
+            <id>1</id>
+            <first_name>Anna</first_name>
+            <last_name>Przyblska</last_name>
+            <mobile>571556512</mobile>
+            <email>loremipsum@gmail.com</email>
+            <pesel>11111111111</pesel>
+        </person>
+        <person>
+            <id>2</id>
+            <first_name>Grzegorz</first_name>
+            <last_name>Testowy</last_name>
+            <mobile>614167358</mobile>
+            <email>develop@gmail.com</email>
+            <pesel>11111111111</pesel>
+        </person>
+        <person>
+            <id>3</id>
+            <first_name>Jakub</first_name>
+            <last_name>Produkcyjny</last_name>
+            <mobile>590194371</mobile>
+            <email>prod@gmail.com</email>
+            <pesel>11111111111</pesel>
+        </person>
+    </persons>
+</persons>

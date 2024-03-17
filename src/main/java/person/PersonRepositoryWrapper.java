@@ -48,35 +48,42 @@ public class PersonRepositoryWrapper {
     }
 
     public List<Person> findByFirstName(Type type, String firstName) {
-        List<Person> personList = new ArrayList<>();
-        switch (type) {
-            case EXTERNAL -> personList = externalPersonRepository.findByFirstName(firstName);
-            case INTERNAL -> personList = internalPersonRepository.findByFirstName(firstName);
+        if (type == Type.EXTERNAL) {
+            return externalPersonRepository.findByFirstName(firstName);
+        } else {
+            return internalPersonRepository.findByFirstName(firstName);
         }
-        return personList;
     }
 
-    public void findByLastName(String lastName) {
-        List<Person> personList = externalPersonRepository.findByLastName(lastName);
+    public List<Person> findByLastName(String lastName) {
+        List<Person> personList = new ArrayList<>();
+        personList.addAll(externalPersonRepository.findByLastName(lastName));
         personList.addAll(internalPersonRepository.findByLastName(lastName));
+        return personList;
     }
 
     public List<Person> findByLastName(Type type, String lastName) {
-        List<Person> personList = new ArrayList<>();
-        switch (type) {
-            case EXTERNAL -> personList = externalPersonRepository.findByFirstName(lastName);
-            case INTERNAL -> personList = internalPersonRepository.findByLastName(lastName);
+        if (type == Type.EXTERNAL) {
+            return externalPersonRepository.findByLastName(lastName);
+        } else {
+            return internalPersonRepository.findByLastName(lastName);
         }
-        return personList;
+    }
+
+    public Person findByMobile(Type type, String mobile) {
+        if (type == Type.EXTERNAL) {
+            return externalPersonRepository.findByMobile(mobile);
+        } else {
+            return internalPersonRepository.findByMobile(mobile);
+        }
     }
 
     public Person find(Type type, String firstName, String lastName, String mobile) {
-        Person person = null;
-        switch (type) {
-            case EXTERNAL -> person = externalPersonRepository.find(firstName, lastName, mobile);
-            case INTERNAL -> person = internalPersonRepository.find(firstName, lastName, mobile);
+        if (type == Type.EXTERNAL) {
+            return externalPersonRepository.find(firstName, lastName, mobile);
+        } else {
+           return internalPersonRepository.find(firstName, lastName, mobile);
         }
-        return person;
     }
 
     public void modify(Person person) throws JAXBException {
@@ -91,18 +98,18 @@ public class PersonRepositoryWrapper {
     }
 
     public List<Person> selectAll() {
-        List<Person> personList = externalPersonRepository.selectAll();
+        List<Person> personList = new ArrayList<>();
+        personList.addAll(externalPersonRepository.selectAll());
         personList.addAll(internalPersonRepository.selectAll());
         return personList;
     }
 
     public List<Person> selectAll(Type type) {
-        List<Person> personList = new ArrayList<>();
-        switch (type) {
-            case EXTERNAL -> personList = externalPersonRepository.selectAll();
-            case INTERNAL -> personList = internalPersonRepository.selectAll();
+        if (type == Type.EXTERNAL) {
+            return externalPersonRepository.selectAll();
+        } else {
+            return internalPersonRepository.selectAll();
         }
-        return personList;
     }
 
     private Type findPersonInRepository(Person person) {

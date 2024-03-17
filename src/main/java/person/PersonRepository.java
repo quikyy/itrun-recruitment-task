@@ -133,6 +133,17 @@ public class PersonRepository {
         return personList;
     }
 
+    public Person findByMobile(String mobile) {
+        Optional<Person> optionalPerson = persons.stream()
+                .filter(p -> p.getMobile().equals(mobile))
+                .findFirst();
+        if (optionalPerson.isEmpty()) {
+            logger.warn(String.format("[%s] Person with provided details not found", type.name()));
+            return null;
+        }
+        return optionalPerson.get();
+    }
+
     public Person find(String firstName, String lastName, String mobile) {
         Optional<Person> optionalPerson = persons.stream()
                 .filter(p -> p.getFirstName().equalsIgnoreCase(firstName) && p.getLastName().equalsIgnoreCase(lastName) && p.getMobile().equals(mobile))
