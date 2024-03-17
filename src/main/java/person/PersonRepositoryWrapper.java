@@ -1,7 +1,6 @@
 package person;
 
 import jakarta.xml.bind.JAXBException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

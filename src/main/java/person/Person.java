@@ -43,7 +43,6 @@ public class Person {
         this.validatePesel(pesel);
     }
 
-
     public int getId() {
         return id;
     }

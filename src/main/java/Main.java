@@ -1,4 +1,3 @@
-
 import org.apache.log4j.BasicConfigurator;
 import person.Environment;
 import person.Person;
@@ -7,10 +6,8 @@ import person.Type;
 import person.PersonRepositoryWrapper;
 import random.RandomGenerator;
 
-import javax.xml.stream.XMLStreamException;
-
 public class Main {
-    public static void main(String[] args) throws JAXBException, XMLStreamException {
+    public static void main(String[] args) throws JAXBException {
         BasicConfigurator.configure();
         PersonRepositoryWrapper personRepository = new PersonRepositoryWrapper(Environment.PROD);
 
@@ -25,6 +22,5 @@ public class Main {
             personRepository.create(Type.INTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "develop@gmail.com", RandomGenerator.getRandomNumber(11)));
             personRepository.create(Type.INTERNAL, new Person(RandomGenerator.getRandomFirstName(), RandomGenerator.getRandomLastName(), RandomGenerator.getRandomNumber(9), "prod@gmail.com", RandomGenerator.getRandomNumber(11)));
         }
-
     }
 }
